@@ -1,0 +1,528 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Sprites/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/ButtonAnim.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/GlobalTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Sprites/New Piskel-9.png.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/bg_stars.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/BGAnim.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Cursor.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/cursor.png" type="Texture" id=8]
+[ext_resource path="res://Anim/Slide-out.tres" type="Animation" id=9]
+[ext_resource path="res://Anim/Slide-in.tres" type="Animation" id=10]
+[ext_resource path="res://Scripts/popup.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/ButtonGrey.tres" type="StyleBox" id=12]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=13]
+[ext_resource path="res://Sprites/New Piskel-3.png.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/New Piskel-2.png.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Button2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Button1.png" type="Texture" id=17]
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.001 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Shift"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 10, 0 ), Vector2( 20, 0 ), Vector2( 80, 0 ), Vector2( 90, 0 ), Vector2( 100, 0 ) ]
+}
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="Theme" id=18]
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+Label/fonts/font = ExtResource( 1 )
+LineEdit/fonts/font = ExtResource( 1 )
+TextEdit/fonts/font = ExtResource( 1 )
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 360, 80 ) ]
+}
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=9]
+
+[sub_resource type="Animation" id=5]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 360, 80 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Slide-in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -700, 0 ), Vector2( -600, 0 ), Vector2( -500, 0 ), Vector2( -400, 0 ), Vector2( -300, 0 ), Vector2( -200, 0 ), Vector2( -100, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Slide-out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -100, 0 ), Vector2( -200, 0 ), Vector2( -300, 0 ), Vector2( -400, 0 ), Vector2( -500, 0 ), Vector2( -600, 0 ), Vector2( -700, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Slide-in"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1100, 0 ), Vector2( 1000, 0 ), Vector2( 900, 0 ), Vector2( 800, 0 ), Vector2( 700, 0 ), Vector2( 600, 0 ), Vector2( 500, 0 ), Vector2( 400, 0 ), Vector2( 300, 0 ), Vector2( 200, 0 ), Vector2( 100, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Slide-out"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 100, 0 ), Vector2( 200, 0 ), Vector2( 300, 0 ), Vector2( 400, 0 ), Vector2( 500, 0 ), Vector2( 600, 0 ), Vector2( 700, 0 ), Vector2( 800, 0 ), Vector2( 900, 0 ), Vector2( 1000, 0 ), Vector2( 1100, 0 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=22]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 13 )
+
+[node name="BG" type="Control" parent="."]
+margin_left = 100.0
+margin_right = 140.0
+margin_bottom = 40.0
+
+[node name="BgStars" type="Sprite" parent="BG"]
+position = Vector2( 516, 296 )
+scale = Vector2( 11.3043, 17.28 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="BgStars3" type="Sprite" parent="BG"]
+position = Vector2( 176, 168 )
+scale = Vector2( 4.45217, 6 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+rot = -0.001
+
+[node name="BgStars2" type="Sprite" parent="BG"]
+position = Vector2( 864, 440 )
+scale = Vector2( 4.45217, 6 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG"]
+anims/RESET = SubResource( 16 )
+anims/Shift = SubResource( 17 )
+
+[node name="Main" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NewGame" type="Button" parent="Main"]
+margin_left = -8.0
+margin_top = 80.0
+margin_right = 200.0
+margin_bottom = 184.0
+theme = SubResource( 18 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "NEW GAME"
+script = ExtResource( 2 )
+popup_name = "NewGamePopup"
+button_name = "NewGame"
+
+[node name="ContinueGame" type="Button" parent="Main"]
+margin_left = -8.0
+margin_top = 200.0
+margin_right = 200.0
+margin_bottom = 304.0
+theme = SubResource( 18 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "CONTINUE SAVE"
+script = ExtResource( 2 )
+popup_name = "LoadSavePopup"
+button_name = "ContinueGame"
+
+[node name="NewGamePopup" type="Popup" parent="Main"]
+visible = true
+margin_left = 360.0
+margin_top = 80.0
+margin_right = 656.0
+margin_bottom = 488.0
+theme = ExtResource( 3 )
+script = ExtResource( 11 )
+
+[node name="BG" type="TextureRect" parent="Main/NewGamePopup"]
+margin_right = 296.0
+margin_bottom = 408.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cgButton" type="Button" parent="Main/NewGamePopup"]
+margin_left = 32.0
+margin_top = 278.0
+margin_right = 272.0
+margin_bottom = 355.0
+text = "NEW GAME"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="nam" type="LineEdit" parent="Main/NewGamePopup"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 272.0
+margin_bottom = 120.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Main/NewGamePopup"]
+margin_left = 32.0
+margin_top = 56.0
+margin_right = 149.0
+margin_bottom = 85.0
+text = "SAVE NAME:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label2" type="Label" parent="Main/NewGamePopup"]
+visible = false
+margin_left = 32.0
+margin_top = 144.0
+margin_right = 156.0
+margin_bottom = 173.0
+text = "Difficulty:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OptionButton" type="OptionButton" parent="Main/NewGamePopup"]
+visible = false
+margin_left = 32.0
+margin_top = 192.0
+margin_right = 272.0
+margin_bottom = 229.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="#Anim" type="AnimationPlayer" parent="Main/NewGamePopup"]
+anims/RESET = SubResource( 19 )
+anims/Slide-in = ExtResource( 10 )
+anims/Slide-out = ExtResource( 9 )
+
+[node name="#Exit" type="Button" parent="Main/NewGamePopup"]
+margin_left = 248.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 56.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = ExtResource( 12 )
+text = "X"
+
+[node name="LoadSavePopup" type="Popup" parent="Main"]
+margin_left = 360.0
+margin_top = 80.0
+margin_right = 656.0
+margin_bottom = 488.0
+theme = ExtResource( 3 )
+script = ExtResource( 11 )
+
+[node name="BG" type="TextureRect" parent="Main/LoadSavePopup"]
+margin_right = 296.0
+margin_bottom = 408.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="cgButton" type="Button" parent="Main/LoadSavePopup"]
+margin_left = 32.0
+margin_top = 278.0
+margin_right = 272.0
+margin_bottom = 355.0
+text = "NEW GAME"
+
+[node name="nam" type="LineEdit" parent="Main/LoadSavePopup"]
+visible = false
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 272.0
+margin_bottom = 120.0
+theme = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Main/LoadSavePopup"]
+visible = false
+margin_left = 32.0
+margin_top = 56.0
+margin_right = 149.0
+margin_bottom = 85.0
+text = "SAVE NAME:"
+
+[node name="Label2" type="Label" parent="Main/LoadSavePopup"]
+margin_left = 32.0
+margin_top = 60.0
+margin_right = 156.0
+margin_bottom = 89.0
+text = "Load Save:"
+
+[node name="OptionButton" type="OptionButton" parent="Main/LoadSavePopup"]
+margin_left = 32.0
+margin_top = 108.0
+margin_right = 272.0
+margin_bottom = 145.0
+theme = ExtResource( 3 )
+
+[node name="#Anim" type="AnimationPlayer" parent="Main/LoadSavePopup"]
+anims/RESET = SubResource( 5 )
+anims/Slide-in = ExtResource( 10 )
+anims/Slide-out = ExtResource( 9 )
+
+[node name="#Exit" type="Button" parent="Main/LoadSavePopup"]
+margin_left = 248.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 56.0
+custom_styles/hover = ExtResource( 12 )
+custom_styles/pressed = ExtResource( 12 )
+custom_styles/focus = ExtResource( 12 )
+custom_styles/disabled = ExtResource( 12 )
+custom_styles/normal = ExtResource( 12 )
+text = "X"
+
+[node name="MenuAnim" type="AnimationPlayer" parent="Main"]
+anims/RESET = SubResource( 10 )
+anims/Slide-in = SubResource( 11 )
+anims/Slide-out = SubResource( 12 )
+
+[node name="NewGame" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="AIdifdropdown" type="OptionButton" parent="NewGame"]
+margin_left = 64.0
+margin_top = 93.0
+margin_right = 384.0
+margin_bottom = 149.0
+
+[node name="AIdifLabel" type="Label" parent="NewGame"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 93.0
+theme = ExtResource( 3 )
+text = "AI difficulty:"
+
+[node name="Cancel" type="Button" parent="NewGame"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 48.0
+theme = ExtResource( 3 )
+custom_styles/normal = ExtResource( 12 )
+text = "<<<"
+
+[node name="NGAnim" type="AnimationPlayer" parent="NewGame"]
+anims/RESET = SubResource( 13 )
+anims/Slide-in = SubResource( 14 )
+anims/Slide-out = SubResource( 15 )
+
+[node name="Cursor" type="Sprite" parent="."]
+position = Vector2( 1024, 5.68434e-14 )
+scale = Vector2( 1.5, 1.25 )
+z_index = 6
+texture = ExtResource( 8 )
+hframes = 6
+vframes = 3
+script = ExtResource( 7 )
+
+[node name="CurAnim" type="AnimationPlayer" parent="Cursor"]
+anims/Lclick = SubResource( 20 )
+anims/RESET = SubResource( 21 )
+anims/Rclick = SubResource( 22 )
+
+[connection signal="pressed" from="Main/NewGamePopup/cgButton" to="." method="_on_cgButton_pressed"]
+[connection signal="pressed" from="NewGame/Cancel" to="." method="_on_Cancel_pressed"]
