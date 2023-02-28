@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/Button1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/New Piskel-2.png.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Button2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/New Piskel-3.png.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 100, 64 )
+
+[resource]
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+Label/fonts/font = ExtResource( 1 )
+LineEdit/fonts/font = ExtResource( 1 )
+TextEdit/fonts/font = ExtResource( 1 )
